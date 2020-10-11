@@ -17,7 +17,7 @@ export class WebReqInterceptorService implements HttpInterceptor {
     request = this.addAuthHeader(request)
 
     //call next() and handle response
-
+    console.log(request)
     return next.handle(request).pipe(
       catchError((err:HttpErrorResponse)=>{
         alert('Something went wrong. Please Try again.')
@@ -36,7 +36,7 @@ export class WebReqInterceptorService implements HttpInterceptor {
               return empty()
             })
           )
-        
+  
         }
         return throwError(err)
       })

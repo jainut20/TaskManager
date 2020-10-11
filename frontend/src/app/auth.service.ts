@@ -8,9 +8,9 @@ import {shareReplay,tap} from 'rxjs/operators'
 })
 export class AuthService {
 
-  ROOT_URL
+  ROOT_URL 
   constructor(private webRequest:WebRequestService,private router:Router,private http: HttpClient) { 
-    this.ROOT_URL = 'http://localhost:3000'
+    this.ROOT_URL = 'http://localhost:3000/'
   }
 
   signup(email:string,password:string){
@@ -70,7 +70,7 @@ export class AuthService {
 
 
   getNewAccessToken(){
-    return this.http.get(`users/me/access-token`,{
+    return this.http.get(this.ROOT_URL+`users/me/access-token`,{
       headers:{'x-refresh-token':this.getRefreshToken(),
                 '_id':this.getUserId()
     },
