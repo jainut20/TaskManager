@@ -1,0 +1,39 @@
+//Here we will put global styles and change variable values
+// @import url('https://fonts.google.com/css?family=Lato:400,700|Nunito:400,700');
+$turqouise:#44ddd0;
+$green:#27d7a1;
+$light-green:#45f69e;
+$dark-green: rgb(0, 100, 80);
+$light:#f8f8f8;
+//Bulmas global variable
+$family-sans-serif:"Nunito",
+"sans-serif";
+$primary:$green;
+$link:$light-green;
+//Update Bulmas component variable
+$control-border-wdth:2px;
+$input-border-color: transparent;
+$input-shadow:none;
+//Set Custom colors to whole app
+html {
+    background: linear-gradient(to right top, $turqouise, $green) !important;
+}
+
+.title {
+    font-family: 'Lato';
+    font-size: 2vw;
+    letter-spacing: 0.5px;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+.centered-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}

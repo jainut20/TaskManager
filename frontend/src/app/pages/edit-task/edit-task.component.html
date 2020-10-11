@@ -1,0 +1,21 @@
+<div class='centered-content'>
+    <div class="modalbox ">
+        <h1 class="title">
+            Edit Task
+        </h1>
+
+
+
+        <input [(ngModel)]='title' class="input is-medium has-background-light" type="text" placeholder="Enter title of Task">
+
+        <div class="buttons is-right" style="margin-top: 20px;">
+            <button routerLink='/lists' class="button is-medium is-info">Go Back</button>
+
+            <button class="button  is-medium is-primary" (click)='EditTask()'>  Save     </button>
+        </div>
+
+    </div>
+
+
+
+</div>

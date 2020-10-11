@@ -1,0 +1,37 @@
+<div class="centered-content">
+    <div class="login-box">
+        <h1 class="title has-text-primary">Login</h1>
+        <div class="field">
+            <p class="control has-icons-left has-icons-right">
+                <input class="input has-background-light" type="email" [(ngModel)]='email' placeholder="Email">
+                <span class="icon is-small is-left">
+                <i class="fas fa-envelope"></i>
+              </span>
+                <span class="icon is-small is-right">
+                <i class="fas fa-check"></i>
+              </span>
+            </p>
+        </div>
+        <div class="field">
+            <p class="control has-icons-left">
+                <input class="input has-background-light" type="password" [(ngModel)]='password' placeholder="Password">
+                <span class="icon is-small is-left">
+                <i class="fas fa-lock"></i>
+              </span>
+            </p>
+        </div>
+        <span>
+            <button (click)='Signup()' class="button is-success">
+              Sign up
+            </button>
+          </span>
+        <div class="field  is-pulled-right">
+
+            <p class="control">
+                <button (click)='Login()' class="button is-success">
+                Login
+              </button>
+            </p>
+        </div>
+    </div>
+</div>

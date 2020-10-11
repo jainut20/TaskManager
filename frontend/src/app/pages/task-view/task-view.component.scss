@@ -1,0 +1,128 @@
+@import '../../../main-styles.scss';
+.task-manager-container {
+    display: flex;
+    height: 70%;
+    width: 60%;
+    max-width: 800px;
+    max-height: 680px;
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+.task-list-container {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    flex-grow: 1;
+    border-radius: 10px;
+    padding: 40px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    .top-bar {
+        margin-bottom: 20px;
+        display: flex;
+        .title {
+            flex-grow: 1;
+            margin: 0;
+        }
+    }
+}
+
+.list-menu {
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    flex-grow: 1;
+    .list-menu-item {
+        display: flex;
+        align-items: center;
+        padding: 10px 15px;
+        width: 100%;
+        border-radius: 5px;
+        color: #5f5f5f;
+        margin-bottom: 5px;
+        &:hover {
+            background: $light;
+        }
+        &.is-active {
+            background-color: #cff8ef;
+            color: $dark-green;
+        }
+    }
+}
+
+.task {
+    display: flex;
+    background-color: white;
+    padding: 10px 15px;
+    margin-right: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    align-items: center;
+    &:not(.complete) {
+        cursor: pointer;
+        transition: box-shadow 0.3s ease, transform 0.2s ease;
+        &:hover {
+            box-shadow: 0 0 0 5px #eeeeee;
+            .task-buttons {
+                opacity: 1;
+                transform: scale(0.8)
+            }
+        }
+        &:active {
+            transform: scale(0.95)
+        }
+    }
+    &.complete .task-text {
+        text-decoration: line-through;
+    }
+    .task-text {
+        flex-grow: 1;
+    }
+    .task-buttons {
+        transition: opacity 0.2s, transform 0.3s;
+        opacity: 0;
+    }
+}
+
+.circle-add-button {
+    height: 50px;
+    width: 50px;
+    border-radius: 25px;
+    background-color: $primary;
+    position: absolute;
+    bottom: 35px;
+    right: 35px;
+    font-size: 50px;
+    text-align: center;
+    cursor: pointer;
+}
+
+
+/* Works on Chrome/Edge/Safari */
+
+*::-webkit-scrollbar {
+    width: 5px;
+}
+
+*::-webkit-scrollbar-track {
+    background: $turqouise;
+    border-radius: 20px;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: $dark-green;
+    border-radius: 20px;
+    border: 1px solid $turqouise;
+}
